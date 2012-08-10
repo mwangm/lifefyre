@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns:ng="http://angularjs.org" ng-app >
+<head>
+    <meta charset="utf-8">
+    <title>My HTML File</title>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/currency.js"></script>
+</head>
+<body>
+
+<div ng:controller="InvoiceCntl">
+    <b>invoce:</b>
+    <br/>
+    <br/>
+    <table>
+        <tr>
+            <td>
+                Quantity
+            </td>
+            <td>
+                Cost
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="integer" min="0" ng-model="qty" required>
+            </td>
+            <td>
+                <input type="number" ng-model="cost" required>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+    <b>Total:</b> {{qty*cost | currency}}
+
+</div>
+
+</body>
+</html>
